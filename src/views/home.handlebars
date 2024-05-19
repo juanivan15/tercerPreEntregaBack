@@ -1,0 +1,32 @@
+<h1>Estos son mis productos</h1>
+
+<div class="productContainer">
+{{#each products}}
+        <div class="cards">
+            <h2>Nombre: {{this.title}}</h2>
+            <p>Precio: {{this.price}}</p>
+            <p>Codigo: {{this.code}}</p>
+            <p>Stock: {{this.stock}}</p>
+            <p>Categoria: {{this.category}}</p>
+        </div>
+{{/each}}
+</div>
+<div>
+    <nav>
+        <ul>
+            <li class="paginacion">
+                {{#if hasPrevPage}}
+                    <a class="antSig" href="/?page={{prevPage}}"> Anterior </a>
+                {{/if}}
+            </li>
+            <li class="paginacion">
+                <p>Pagina {{currentPage}} de {{totalPages}} </p>
+            </li>
+            <li class="paginacion">
+                {{#if hasNextPage}}
+                    <a class="antSig" href="/?page={{nextPage}}"> Siguiente </a>
+                {{/if}}
+            </li>
+        </ul>
+    </nav>
+</div>
